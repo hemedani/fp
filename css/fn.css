@@ -1,0 +1,61 @@
+.farsi {
+  direction: rtl;
+  font-family: Vazirmatn !important;
+}
+
+.cn {
+  text-align: center;
+}
+
+.list {
+  text-align: right;
+  font-size: 1.8rem;
+  line-height: 2;
+  margin-top: 2rem;
+  list-style-type: square;
+  padding-right: 3rem;
+}
+
+.list li {
+  transition: transform 0.4s ease;
+}
+
+.list li:hover {
+  color: forestgreen;
+  transform: scale(1.05);
+  cursor: help;
+}
+
+.tx-left {
+  text-align: left !important;
+}
+
+
+.vasat {
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  line-height: 2;
+}
+
+.matn {
+  font-size: 1.4rem;
+  text-align: right;
+}
+
+.shahrara h1 {
+  font-size: 10rem !important;
+  margin-top: 4rem;
+}
+
+.idea b {
+  padding-top: 1rem;
+}
+
+#source {
+  text-align: center;
+}
+
+#source img {
+  margin: 0 auto;
+  width: 300px;
+}
