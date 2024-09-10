@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./css/myStyles.css" />
   <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet"
     type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
   <title>فانکشنال پروگرمینگ</title>
 </head>
 
@@ -76,11 +77,24 @@
       <ul class="list">
         <li><a href="https://github.com/elm" target="_blank">Elm repository</a></li>
         <li><a href="https://elm-lang.org/" target="_blank">Elm website</a></li>
-        <li><a href="https://legacy.reactjs.org/docs/hooks-intro.html" target="_blank">React Hook</a></li>
       </ul>
     </div>
 
     <div class="step h-slide farsi cn" data-x="0" data-y="6900" data-z="-4000" >
+      <strong>آشنا به نظر میاد</strong>
+      <div class="matn">
+      منابع :
+      </div>
+      <ul class="list">
+        <li><a href="https://redux.js.org/understanding/history-and-design/prior-art" target="_blank">Redux</a></li>
+        <li><a href="https://legacy.reactjs.org/docs/hooks-intro.html" target="_blank">React Hook</a></li>
+      </ul>
+      <div class="graph-pic-90">
+        <img src="./image/dan.png" alt="" />
+      </div>
+    </div>
+
+    <div class="step h-slide farsi cn" data-x="0" data-y="7900" data-z="-4000" >
       <strong>Rust + Yew</strong>
       <div class="matn">
       منابع :
@@ -91,11 +105,67 @@
       </ul>
     </div>
 
+    <div class="step h-slide farsi cn" data-x="2000" data-y="7900" data-z="-2000" >
+      <strong>یک مثال ساده</strong>
+      <pre class="code-style"><code class="ts">
+class Flock {
+  seagulls: number;
+  constructor(n: number) {
+    this.seagulls = n;
+  }
+
+  conjoin(other: Flock) {
+    this.seagulls += other.seagulls;
+    return this;
+  }
+
+  breed(other: Flock) {
+    this.seagulls = this.seagulls * other.seagulls;
+    return this;
+  }
+}
+
+const flockA = new Flock(4);
+const flockB = new Flock(2);
+const flockC = new Flock(0);
+const result = flockA
+  .conjoin(flockC)
+  .breed(flockB)
+  .conjoin(flockA.breed(flockB))
+  .seagulls;
+
+      </code></pre>    
+
+      <pre class="code-style hidden"><code class="ts">
+console.log("result is (in OOP) => ", result) // 32
+      </code></pre>    
+    </div>
+
+    <div class="step h-slide farsi cn" data-x="3000" data-y="7900" data-z="-2000" >
+      <strong>و اما در FP</strong>
+      <pre class="code-style"><code class="ts">
+const conjoin = (flockX:number, flockY:number) => flockX + flockY;
+const breed = (flockX:number, flockY:number) => flockX * flockY;
+
+const flockA = 4;
+const flockB = 2;
+const flockC = 0;
+const result =
+    conjoin(breed(flockB, conjoin(flockA, flockC)), breed(flockA, flockB));
+      </code></pre>    
+      <pre class="code-style hidden"><code class="ts">
+console.log("result is (in FP) => ", result) // 16
+      </code></pre>    
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <script type="text/javascript" src="js/impress.js"></script>
     <script type="text/javascript" src="js/modal.js"></script>
     <script>
       impress().init();
     </script>
+    <script>hljs.highlightAll();</script>
 
 </body>
 

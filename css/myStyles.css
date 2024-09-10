@@ -209,3 +209,18 @@
 .step.active {
   filter: blur(0px);
 }
+
+.code-style {
+  direction: ltr;
+  font-size: 0.8rem;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.code-style.hidden {
+  opacity: 0;
+}
+
+.code-style.hidden:hover {
+  opacity: 1;
+}
